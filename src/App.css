@@ -1,5 +1,13 @@
+:root {
+  --vh: 100%;
+}
+
+
 .App {
   text-align: center;
+  position: relative;
+  max-width:500px;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -7,15 +15,75 @@
   pointer-events: none;
 }
 
+.App .paper{
+  background-image: url('./lib/img/paper-groove.png');
+}
+
+.video {
+  width: 100%; 
+  position: absolute;
+  left: 0px;
+  max-width: 500px;
+}
+
+.paper{
+  padding: 15px; 
+  border-radius: 5px; 
+  margin-top: 200%;
+}
+
+.videoTextBox{
+  font-family: MapoFlowerIsland;
+  font-size: 15pt;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  border: 1px solid white;
+  position: absolute;
+  z-index: 1;
+  width: 60%;
+  left: 20%;
+  top:20px;
+  opacity: 0.7;
+  margin: 0 auto;
+}
+
+
+@media (min-width: 395px) {
+  .videoTextBox{
+    margin: 0 auto;
+    width: 60%;
+    left: 20%;
+  }
+  .paper{
+    margin-top: 200%;
+  }
+
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+@font-face {
+  font-family: 'MapoFlowerIsland';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GangwonEdu_OTFLightA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFLightA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
