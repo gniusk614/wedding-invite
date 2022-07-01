@@ -160,7 +160,7 @@ export default function Home() {
     <div>
       <Calendar />
       <Container />
-      <Gallery/>
+      <Gallery />
       <div style={{ backgroundColor: "SeaShell", height: "100px" }}></div>
     </div>
   );

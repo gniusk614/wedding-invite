@@ -10,7 +10,7 @@ import img_6 from "../lib/img/pic_6.jpg";
 
 export default function Gallery() {
   var items = [img_1, img_2, img_3, img_4, img_5, img_6];
-
+  
   return (
     <div
       style={{
@@ -34,7 +34,7 @@ export default function Gallery() {
           </div>
           <Carousel height="400px">
             {items.map((item, i) => (
-              <img src={item} style={{ width: "90%"}}></img>
+              <img src={item} style={{ width: "90%",zIndex:1}}></img>
             ))}
           </Carousel>
         </div>

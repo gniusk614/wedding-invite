@@ -17,9 +17,7 @@ function App() {
   return (
     <div className="App">
       <Home></Home>
-      <bottom>
-        <FixedBottomNavigation />
-      </bottom>
+      <FixedBottomNavigation />
     </div>
   );
 }

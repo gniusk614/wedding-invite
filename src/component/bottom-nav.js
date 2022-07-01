@@ -28,19 +28,17 @@ import { BsPinMapFill } from "react-icons/bs";
 //   );
 // }
 
+
+
+
+
 export default function FixedBottomNavigation() {
   const [value, setValue] = React.useState(0);
   const ref = React.useRef(null);
-  // const [messages, setMessages] = React.useState(() => refreshMessages());
-
-  // React.useEffect(() => {
-  //   ref.current.ownerDocument.body.scrollTop = 0;
-  //   setMessages(refreshMessages());
-  // }, [value, setMessages]);
 
   return (
     <Box ref={ref} >
-      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex:100 }} elevation={3}>
         <BottomNavigation
           showLabels
           value={value}
