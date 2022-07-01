@@ -3,7 +3,7 @@ import Carousel from "react-material-ui-carousel";
 import { Paper, Button } from "@mui/material";
 import img_1 from "../lib/img/pic_1.jpg";
 import img_2 from "../lib/img/pic_2.JPG";
-import img_3 from "../lib/img/pic_3.jpg";
+import img_3 from "../lib/img/pic_7.jpg";
 import img_4 from "../lib/img/pic_4.jpg";
 import img_5 from "../lib/img/pic_5.jpg";
 import img_6 from "../lib/img/pic_6.jpg";
