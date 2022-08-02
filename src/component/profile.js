@@ -65,7 +65,7 @@ export default function Gallery() {
   let [more, setMore] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const handleClose = () => setOpen(false);
-  const [index,setIndex] = React.useState(0);
+  const [index, setIndex] = React.useState(0);
 
   const onClickMore = () => {
     if (more == false) {
@@ -76,25 +76,17 @@ export default function Gallery() {
   };
 
   const PhotoFull = () => {
-    console.log(index)
+    console.log(index);
     return (
-      <Carousel 
-      autoPlay={false}
-      animation="slide"
-      indicators={false}
-      >
-        {items.slice(index).map((item, i) => (
-          <img key={i} src={item} style={{ width: "100%" }}></img>
+      <Carousel index={index} autoPlay={false} animation="slide" indicators={false}>
+        {items.map((item, i) => (
+            <img key={i} src={item} style={{ width: "100%" }}></img>
         ))}
       </Carousel>
     );
   };
 
-
-
   const Photo = () => {
-
-
     var element = [];
 
     if (more === false) {
@@ -102,14 +94,14 @@ export default function Gallery() {
     } else {
       element = items;
     }
-    
+
     const modalStyle = {
       position: "absolute",
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
       width: 350,
-      boxShadow: 24
+      outline:"none",
     };
 
     return (
@@ -120,7 +112,7 @@ export default function Gallery() {
               key={i}
               onClick={(e) => {
                 e.preventDefault();
-                setIndex(i)
+                setIndex(i);
                 setOpen(true);
               }}
             >
@@ -129,10 +121,7 @@ export default function Gallery() {
           ))}
         </div>
         <div>
-          <Modal
-            open={open}
-            onClose={handleClose}
-          >
+          <Modal open={open} onClose={handleClose}>
             <Box sx={modalStyle}>
               <PhotoFull />
             </Box>
@@ -141,7 +130,6 @@ export default function Gallery() {
       </div>
     );
   };
-
 
   return (
     <div
