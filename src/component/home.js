@@ -2,13 +2,18 @@ import * as React from "react";
 import Container from "./content";
 import logo from "../lib/img/pic_7.jpg";
 import img1 from "../lib/img/img2.png";
-import video from "../lib/img/video_3.mov";
 import video2 from "../lib/img/video_2.mov";
-import CallBtn from "./profile";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import { MdCall } from "react-icons/md";
 import Gallery from "./profile";
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import PhoneInfo from "./phoneInfo";
+import { AiOutlineClose } from "react-icons/ai";
+
+
 
 const Calendar = () => {
   const style = {
@@ -20,6 +25,25 @@ const Calendar = () => {
     margin: "15px",
     width: "60%",
   };
+  const modalStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 350,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+  };
+
+  const [info, setInfo] = React.useState("");
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+
+
+
 
   return (
     <div>
@@ -127,6 +151,10 @@ const Calendar = () => {
                 <div style={{ display: "inline-block" }}>
                   <Stack spacing={5} direction="row">
                     <Button
+                      onClick={() => {
+                        handleOpen();
+                        setInfo("groom");
+                      }}
                       size="medium"
                       color="primary"
                       variant="outlined"
@@ -136,6 +164,10 @@ const Calendar = () => {
                       <br /> 연락처
                     </Button>
                     <Button
+                      onClick={() => {
+                        handleOpen();
+                        setInfo("bride");
+                      }}
                       size="medium"
                       color="error"
                       variant="outlined"
@@ -145,6 +177,21 @@ const Calendar = () => {
                       <br /> 연락처
                     </Button>
                   </Stack>
+                  <div>
+                    <Modal
+                      open={open}
+                      onClose={handleClose}
+                      aria-labelledby="modal-modal-title"
+                      aria-describedby="modal-modal-description"
+                    >
+                      <Box sx={modalStyle}>
+                        <div style={{float:"right"}}>
+                          <AiOutlineClose onClick={handleClose} />
+                        </div>
+                        <PhoneInfo Info={info} />
+                      </Box>
+                    </Modal>
+                  </div>
                 </div>
               </div>
             </div>
@@ -154,6 +201,9 @@ const Calendar = () => {
     </div>
   );
 };
+
+
+
 
 export default function Home() {
   return (
