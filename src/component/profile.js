@@ -1,6 +1,6 @@
 import * as React from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button } from "@mui/material";
+import { Paper, Button, autocompleteClasses } from "@mui/material";
 import img_1 from "../lib/img/pic_1.jpg";
 import img_2 from "../lib/img/pic_2.JPG";
 import img_3 from "../lib/img/pic_7.jpg";
@@ -10,13 +10,14 @@ import img_6 from "../lib/img/pic_6.jpg";
 
 export default function Gallery() {
   var items = [img_1, img_2, img_3, img_4, img_5, img_6];
-  
+
   return (
     <div
       style={{
         padding: "10px 20px",
         textAlign: "center",
         backgroundColor: "SeaShell",
+
       }}
     >
       <div className="paper" style={{ marginTop: "20px" }}>
@@ -27,16 +28,16 @@ export default function Gallery() {
             borderRadius: "5px",
           }}
         >
-          <div style={{ fontFamily: "MapoFlowerIsland", fontSize: "15pt", marginTop:"20px", marginBottom:"40px" }}>
+          <div style={{ fontFamily: "MapoFlowerIsland", fontSize: "15pt", marginTop: "20px", marginBottom: "40px" }}>
             <text>
               우리의 소중한 순간
             </text>
           </div>
-          <Carousel height="400px">
+          <div>
             {items.map((item, i) => (
-              <img src={item} style={{ width: "90%",zIndex:1}}></img>
+              <img key={i} src={item} style={{ width: "30%", margin: "2px" }}></img>
             ))}
-          </Carousel>
+          </div>
         </div>
       </div>
     </div>

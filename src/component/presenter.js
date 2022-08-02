@@ -20,7 +20,7 @@ export default function Presenter(props) {
           }}
         >
           <span
-            style={{ fontFamily: "GangwonEdu_OTFLightA", fontSize: "15pt" }}
+            style={{ fontFamily: "MapoFlowerIsland", fontSize: "15pt" }}
           >
             우리 결혼까지
           </span>
