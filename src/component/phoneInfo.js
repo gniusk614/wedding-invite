@@ -12,7 +12,7 @@ import TableRow from '@mui/material/TableRow';
 
 const phoneNumber = {
     "groom": "010-9947-4735",
-    "groomF": "010-3879-4735",
+    "groomF": "010-3754-4735",
     "groomM": "010-9084-4735",
     "bride": "010-7918-4060",
     "brideF": "010-9123-4063",

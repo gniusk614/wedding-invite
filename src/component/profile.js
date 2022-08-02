@@ -65,6 +65,7 @@ export default function Gallery() {
   let [more, setMore] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const handleClose = () => setOpen(false);
+  const [index,setIndex] = React.useState(0);
 
   const onClickMore = () => {
     if (more == false) {
@@ -74,46 +75,52 @@ export default function Gallery() {
     }
   };
 
-  const PhotoFull = (i) => {
-    console.log(i);
-    let list = items.slice(i);
-    console.log(list)
+  const PhotoFull = () => {
+    console.log(index)
     return (
       <Carousel 
-      autoPlay="false"
+      autoPlay={false}
       animation="slide"
       indicators={false}
       >
-        {list.map((item, index) => (
-          <img key={index} src={item} style={{ width: "100%" }}></img>
+        {items.slice(index).map((item, i) => (
+          <img key={i} src={item} style={{ width: "100%" }}></img>
         ))}
       </Carousel>
     );
   };
 
+
+
   const Photo = () => {
+
+
     var element = [];
+
     if (more === false) {
       element = items.slice(0, 6);
     } else {
       element = items;
     }
+    
     const modalStyle = {
       position: "absolute",
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
-      width: "85%",
-      boxShadow: 24,
+      width: 350,
+      boxShadow: 24
     };
+
     return (
       <div>
         <div>
           {element.map((item, i) => (
             <span
               key={i}
-              onClick={() => {
-                PhotoFull(i);
+              onClick={(e) => {
+                e.preventDefault();
+                setIndex(i)
                 setOpen(true);
               }}
             >
@@ -125,12 +132,10 @@ export default function Gallery() {
           <Modal
             open={open}
             onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
           >
-            <div style={modalStyle}>
+            <Box sx={modalStyle}>
               <PhotoFull />
-            </div>
+            </Box>
           </Modal>
         </div>
       </div>
