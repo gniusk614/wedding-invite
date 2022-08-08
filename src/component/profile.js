@@ -78,9 +78,29 @@ export default function Gallery() {
   const PhotoFull = () => {
     console.log(index);
     return (
-      <Carousel index={index} autoPlay={false} animation="slide" indicators={false}>
+      <Carousel
+        index={index}
+        autoPlay={false}
+        animation="slide"
+        indicators={false}
+      >
         {items.map((item, i) => (
-            <img key={i} src={item} style={{ width: "100%" }}></img>
+          <div
+            style={{
+              width: "100%",
+              position: "relative",
+              display: "flex", 
+              justifyContent: "end"
+            }}
+          >
+            <div onClick={handleClose} style={{cursor: "pointer", position: "absolute",zIndex: "99",height:"auto"}}>
+              <AiOutlineClose
+              opacity={0.3}
+                size={20}
+              />
+            </div>
+            <img key={i} src={item} style={{ width: "100%", zIndex:"1" }}></img>
+          </div>
         ))}
       </Carousel>
     );
@@ -101,7 +121,7 @@ export default function Gallery() {
       left: "50%",
       transform: "translate(-50%, -50%)",
       width: 350,
-      outline:"none",
+      outline: "none",
     };
 
     return (
@@ -116,7 +136,10 @@ export default function Gallery() {
                 setOpen(true);
               }}
             >
-              <img src={item} style={{ width: "30%", margin: "2px" }}></img>
+              <img
+                src={item}
+                style={{ width: "30%", margin: "2px", cursor: "pointer" }}
+              ></img>
             </span>
           ))}
         </div>

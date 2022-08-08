@@ -12,6 +12,8 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import PhoneInfo from "./phoneInfo";
 import { AiOutlineClose } from "react-icons/ai";
+import YoutubeMovie from "./movie";
+import PayInfo from "./pay";
 
 
 
@@ -186,7 +188,7 @@ const Calendar = () => {
                     >
                       <Box sx={modalStyle}>
                         <div style={{float:"right"}}>
-                          <AiOutlineClose onClick={handleClose} />
+                          <AiOutlineClose size={20} onClick={handleClose} style={{"cursor":"pointer"}} />
                         </div>
                         <PhoneInfo Info={info} />
                       </Box>
@@ -211,6 +213,8 @@ export default function Home() {
       <Calendar />
       <Container />
       <Gallery />
+      <YoutubeMovie/>
+      <PayInfo/>
       <div style={{ backgroundColor: "SeaShell", height: "100px" }}></div>
     </div>
   );
