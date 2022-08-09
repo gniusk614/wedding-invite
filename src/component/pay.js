@@ -32,15 +32,15 @@ const payNumber = {
     "name": "이희연",
     "number": "604402-01-455355"
   },
-  "brideF": {
-    "bank": "국민은행",
-    "name": "이만식",
-    "number": "604402-01-455355"
-  },
   "brideM": {
-    "bank": "국민은행",
+    "bank": "우리은행",
     "name": "김정미",
-    "number": "604402-01-455355"
+    "number": "32408001533"
+  },
+  "brideF": {
+    "bank": "우리은행",
+    "name": "김정미",
+    "number": "32408001533"
   }
 }
 
@@ -73,7 +73,10 @@ function Pay(props) {
       console.log("bride"); break;
   }
 
-
+  const copyHandler = (i)=>{
+    navigator.clipboard.writeText(`${list[i].number} ${list[i].bank} ${list[i].name}`);
+    alert("계좌번호를 복사했습니다.")
+  }
 
 
   return (
@@ -92,7 +95,9 @@ function Pay(props) {
                 {list[0].number}
               </TableCell>
               <TableCell align="center">
-                <Button color="error" size="small" variant="outlined">복사</Button>
+                <Button onClick={()=>{
+                  copyHandler(0)
+                }} color="error" size="small" variant="outlined">복사</Button>
               </TableCell>
             </TableRow>
             <TableRow>
@@ -106,7 +111,9 @@ function Pay(props) {
                 {list[1].number}
               </TableCell>
               <TableCell align="center">
-              <Button color="error" size="small" variant="outlined">복사</Button>
+              <Button onClick={()=>{
+                  copyHandler(1)
+                }} color="error" size="small" variant="outlined">복사</Button>
               </TableCell>
             </TableRow>
             <TableRow>
@@ -115,7 +122,9 @@ function Pay(props) {
                 {list[2].number}
               </TableCell>
               <TableCell align="center">
-              <Button color="error" size="small" variant="outlined">복사</Button>
+              <Button onClick={()=>{
+                  copyHandler(2)
+                }} color="error" size="small" variant="outlined">복사</Button>
               </TableCell>
             </TableRow>
           </TableBody>

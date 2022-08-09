@@ -17,6 +17,9 @@ import { FaCommentsDollar } from "react-icons/fa";
 import { AiFillPicture } from "react-icons/ai";
 import { MdComment } from "react-icons/md";
 import { BsPinMapFill } from "react-icons/bs";
+import { RiKakaoTalkFill } from "react-icons/ri";
+import { AiOutlineLink } from "react-icons/ai";
+import Icon from "../lib/img/share_icon.png";
 
 
 
@@ -33,23 +36,39 @@ import { BsPinMapFill } from "react-icons/bs";
 
 
 export default function FixedBottomNavigation() {
-  const [value, setValue] = React.useState(0);
   const ref = React.useRef(null);
+
+
+  React.useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  const kakao = () => {
+    // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    window.Kakao.init("e5c5f0051a5b0fec7039bca859ca2c29");
+    // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+    window.Kakao.Link.createCustomButton({
+      container: "#kakaoLink",
+      templateId: 81085,
+    });
+  };
+  
 
   return (
     <Box ref={ref} >
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex:100 }} elevation={3}>
         <BottomNavigation
-          showLabels
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
         >
-          <BottomNavigationAction label="사진보기" icon={<AiFillPicture size="23" />} />
-          <BottomNavigationAction label="축의금" icon={<FaCommentsDollar size="23" />} />
-          <BottomNavigationAction label="축하메시지" icon={<MdComment size="23" />} />
-          <BottomNavigationAction label="식장 위치" icon={<BsPinMapFill size="23" />} />
+          <BottomNavigationAction id="kakaoLink" onClick={kakao} label="카톡공유" icon={<RiKakaoTalkFill size="50"/>} />
+          <BottomNavigationAction label="링크복사" icon={<AiOutlineLink size="50" />} />
         </BottomNavigation>
       </Paper>
     </Box>
