@@ -14,6 +14,7 @@ import PhoneInfo from "./phoneInfo";
 import { AiOutlineClose } from "react-icons/ai";
 import YoutubeMovie from "./movie";
 import PayInfo from "./pay";
+import ShareBox from "./share";
 
 
 
@@ -215,6 +216,7 @@ export default function Home() {
       <Gallery />
       <YoutubeMovie/>
       <PayInfo/>
+      <ShareBox/>
       <div style={{ backgroundColor: "SeaShell", height: "100px" }}></div>
     </div>
   );
