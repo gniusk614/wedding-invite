@@ -1,24 +1,47 @@
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { AiOutlineClose } from "react-icons/ai";
-import { Modal } from "@mui/material";
+import Modal from '@mui/material/Modal';
 import icon from "../lib/img/kakaopayIcon.jpg";
 import React from "react";
 import { Table } from '@mui/material';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { purple, red } from '@mui/material/colors';
 
 
-
-const phoneNumber = {
-    "groom": "010-9947-4735",
-    "groomF": "010-3754-4735",
-    "groomM": "010-9084-4735",
-    "bride": "010-7918-4060",
-    "brideF": "010-9123-4063",
-    "brideM": "010-5260-4063"
+const payNumber = {
+  "groom": {
+    "bank": "국민은행",
+    "name": "강광훈",
+    "number": "604402-01-455355"
+  },
+  "groomF": {
+    "bank": "농협은행",
+    "name": "강병우",
+    "number": "171625-51-037691"
+  },
+  "groomM": {
+    "bank": "농협은행",
+    "name": "장상희",
+    "number": "235084-56-153029"
+  },
+  "bride": {
+    "bank": "국민은행",
+    "name": "이희연",
+    "number": "604402-01-455355"
+  },
+  "brideF": {
+    "bank": "국민은행",
+    "name": "이만식",
+    "number": "604402-01-455355"
+  },
+  "brideM": {
+    "bank": "국민은행",
+    "name": "김정미",
+    "number": "604402-01-455355"
+  }
 }
 
 
@@ -26,88 +49,80 @@ const phoneNumber = {
 function Pay(props) {
 
 
-    console.log(props.Info)
+  console.log(props.Info)
+  let list = [];
+  let person = "";
 
-    let list = [];
-    let person = "";
-
-    switch (props.Info) {
-        case "groom":
-            console.log("groom");
-            list = [
-                phoneNumber.groom,
-                phoneNumber.groomF,
-                phoneNumber.groomM
-            ];
-            person = "신랑";
-            break;
-        case "bride":
-            list = [
-                phoneNumber.bride,
-                phoneNumber.brideF,
-                phoneNumber.brideM
-            ];
-            person = "신부";
-            console.log("bride"); break;
-    }
-
-
-    const clickCall = (element) => {
-        window.location.href = `tel:${element}`
-    }
-    const clickSMS = (element) => {
-        try {
-            window.location.href = `sms:${element}`
-        } catch (e) {
-            alert('문자보내기는 모바일에서만 가능합니다.')
-        }
-    }
+  switch (props.Info) {
+    case "groom":
+      console.log("groom");
+      list = [
+        payNumber.groom,
+        payNumber.groomF,
+        payNumber.groomM
+      ];
+      person = "신랑";
+      break;
+    case "bride":
+      list = [
+        payNumber.bride,
+        payNumber.brideF,
+        payNumber.brideM
+      ];
+      person = "신부";
+      console.log("bride"); break;
+  }
 
 
-    return (
-        <div>
-            <TableContainer>
-                <Table sx={{ minWidth: 150 }} aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell align="center" colSpan={4} style={{ "fontFamily": "MapoFlowerIsland", "fontSize": "large" }}>
-                                {person} 측 연락처
-                            </TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        <TableRow>
-                            <TableCell component="th" scope="row" style={{ "fontFamily": "MapoFlowerIsland", "fontSize": 20 }}>
-                                <font size={2}>{person}</font>&nbsp;{person == "신랑" ? "강광훈" : "이희연"}
-                            </TableCell>
-                            <TableCell align="center">
-                            </TableCell>
-                            <TableCell align="center">
-                            </TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell component="th" scope="row" style={{ "fontFamily": "MapoFlowerIsland", "fontSize": 20 }}>
-                                <font size={2}>혼주</font>&nbsp;{person == "신랑" ? "강병우" : "이만식"}
-                            </TableCell>
-                            <TableCell align="center">
-                            </TableCell>
-                            <TableCell align="center">
-                            </TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell component="th" scope="row" style={{ "fontFamily": "MapoFlowerIsland", "fontSize": 20 }}>
-                                <font size={2}>혼주</font>&nbsp;{person == "신랑" ? "장상희" : "김정미"}
-                            </TableCell>
-                            <TableCell align="center">
-                            </TableCell>
-                            <TableCell align="center">
-                            </TableCell>
-                        </TableRow>
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
-    )
+
+
+  return (
+    <div>
+      <TableContainer>
+        <Table sx={{ minWidth: 150 }} aria-label="simple table">
+          <TableBody>
+            <TableRow>
+              <TableCell align="center" colSpan={2} component="th" style={{ "fontFamily": "MapoFlowerIsland", "textAlign":"center" }}>
+                <font size={4}>{person == "신랑" ? "신랑에게" : "신부에게"}</font>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell align="center">
+                {list[0].bank}(예금주:{list[0].name})<br />
+                {list[0].number}
+              </TableCell>
+              <TableCell align="center">
+                <Button color="error" size="small" variant="outlined">복사</Button>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell align="center" colSpan={2} component="th" style={{ "fontFamily": "MapoFlowerIsland","textAlign":"center"  }}>
+                <font size={4}>{person == "신랑" ? "신랑 측 혼주에게" : "신부 측 혼주에게"}</font>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell align="center">
+                {list[1].bank}(예금주:{list[1].name})<br />
+                {list[1].number}
+              </TableCell>
+              <TableCell align="center">
+              <Button color="error" size="small" variant="outlined">복사</Button>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell align="center">
+                {list[2].bank}(예금주:{list[2].name})<br />
+                {list[2].number}
+              </TableCell>
+              <TableCell align="center">
+              <Button color="error" size="small" variant="outlined">복사</Button>
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
+  )
 
 }
 
@@ -124,6 +139,8 @@ export default function PayInfo() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const [info, setInfo] = React.useState("");
+
   const modalStyle = {
     position: "absolute",
     top: "50%",
@@ -131,7 +148,9 @@ export default function PayInfo() {
     transform: "translate(-50%, -50%)",
     width: 350,
     outline: "none",
-    backgroundColor:"white"
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
   };
 
   return (
@@ -193,7 +212,10 @@ export default function PayInfo() {
             }}
           >
             <div
-              onClick={handleOpen}
+              onClick={() => {
+                handleOpen()
+                setInfo("groom")
+              }}
               style={{
                 fontFamily: "S-CoreDream-4Regular",
                 padding: "10px",
@@ -215,7 +237,10 @@ export default function PayInfo() {
             }}
           >
             <div
-              onClick={handleOpen}
+              onClick={() => {
+                handleOpen()
+                setInfo("bride")
+              }}
               style={{
                 fontFamily: "S-CoreDream-4Regular",
                 padding: "10px",
@@ -248,7 +273,7 @@ export default function PayInfo() {
               />
             </div>
             <div>
-                <Pay/>
+              <Pay Info={info} />
             </div>
           </Box>
         </Modal>
