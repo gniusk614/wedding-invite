@@ -60,15 +60,19 @@ export default function FixedBottomNavigation() {
       templateId: 81085,
     });
   };
+
+  const copyHandler = (i) => {
+    navigator.clipboard.writeText("https://gniusk614.github.io/");
+    alert("주소를 복사했습니다.")
+  }
   
 
   return (
     <Box ref={ref} >
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex:100 }} elevation={3}>
-        <BottomNavigation
-        >
-          <BottomNavigationAction id="kakaoLink" onClick={kakao} label="카톡공유" icon={<RiKakaoTalkFill size="50"/>} />
-          <BottomNavigationAction label="링크복사" icon={<AiOutlineLink size="50" />} />
+        <BottomNavigation>
+          <BottomNavigationAction showLabel="카톡공유" id="kakaoLink" onClick={kakao} label="카톡공유" icon={<RiKakaoTalkFill size="30"/>} />
+          <BottomNavigationAction showLabel="링크복사" label="링크복사" onClick={copyHandler} icon={<AiOutlineLink size="30" />} />
         </BottomNavigation>
       </Paper>
     </Box>

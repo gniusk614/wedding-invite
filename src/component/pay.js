@@ -9,6 +9,8 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import { purple, red } from '@mui/material/colors';
+import KakaoPay from "./kakaoPay";
+import KakaoPayLink from "./kakaoPay";
 
 
 const payNumber = {
@@ -36,12 +38,12 @@ const payNumber = {
     "bank": "우리은행",
     "name": "김정미",
     "number": "32408001533"
-  },
-  "brideF": {
-    "bank": "우리은행",
-    "name": "김정미",
-    "number": "32408001533"
   }
+  // "brideF": {
+  //   "bank": "우리은행",
+  //   "name": "김정미",
+  //   "number": "32408001533"
+  // }
 }
 
 
@@ -66,14 +68,14 @@ function Pay(props) {
     case "bride":
       list = [
         payNumber.bride,
-        payNumber.brideF,
+        // payNumber.brideF,
         payNumber.brideM
       ];
       person = "신부";
       console.log("bride"); break;
   }
 
-  const copyHandler = (i)=>{
+  const copyHandler = (i) => {
     navigator.clipboard.writeText(`${list[i].number} ${list[i].bank} ${list[i].name}`);
     alert("계좌번호를 복사했습니다.")
   }
@@ -85,7 +87,7 @@ function Pay(props) {
         <Table sx={{ minWidth: 150 }} aria-label="simple table">
           <TableBody>
             <TableRow>
-              <TableCell align="center" colSpan={2} component="th" style={{ "fontFamily": "MapoFlowerIsland", "textAlign":"center" }}>
+              <TableCell align="center" colSpan={2} component="th" style={{ "fontFamily": "MapoFlowerIsland", "textAlign": "center" }}>
                 <font size={4}>{person == "신랑" ? "신랑에게" : "신부에게"}</font>
               </TableCell>
             </TableRow>
@@ -95,38 +97,31 @@ function Pay(props) {
                 {list[0].number}
               </TableCell>
               <TableCell align="center">
-                <Button onClick={()=>{
+                <Button onClick={() => {
                   copyHandler(0)
                 }} color="error" size="small" variant="outlined">복사</Button>
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell align="center" colSpan={2} component="th" style={{ "fontFamily": "MapoFlowerIsland","textAlign":"center"  }}>
+              <TableCell align="center" colSpan={2} component="th" style={{ "fontFamily": "MapoFlowerIsland", "textAlign": "center" }}>
                 <font size={4}>{person == "신랑" ? "신랑 측 혼주에게" : "신부 측 혼주에게"}</font>
               </TableCell>
             </TableRow>
-            <TableRow>
-              <TableCell align="center">
-                {list[1].bank}(예금주:{list[1].name})<br />
-                {list[1].number}
-              </TableCell>
-              <TableCell align="center">
-              <Button onClick={()=>{
-                  copyHandler(1)
-                }} color="error" size="small" variant="outlined">복사</Button>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell align="center">
-                {list[2].bank}(예금주:{list[2].name})<br />
-                {list[2].number}
-              </TableCell>
-              <TableCell align="center">
-              <Button onClick={()=>{
-                  copyHandler(2)
-                }} color="error" size="small" variant="outlined">복사</Button>
-              </TableCell>
-            </TableRow>
+
+
+            {list.slice(1).map((item, index) => 
+              <TableRow key={index}>
+                <TableCell align="center">
+                  {item.bank}(예금주:{item.name})<br />
+                  {item.number}
+                </TableCell>
+                <TableCell align="center">
+                  <Button onClick={() => {
+                    copyHandler(index+1)
+                  }} color="error" size="small" variant="outlined">복사</Button>
+                </TableCell>
+              </TableRow>
+            )}
           </TableBody>
         </Table>
       </TableContainer>
@@ -134,13 +129,6 @@ function Pay(props) {
   )
 
 }
-
-
-
-
-
-
-
 
 
 export default function PayInfo() {
@@ -194,25 +182,7 @@ export default function PayInfo() {
               justifyContent: "center",
             }}
           >
-            <div
-              onClick={handleOpen}
-              style={{
-                fontFamily: "S-CoreDream-4Regular",
-                padding: "10px",
-                margin: "5px",
-                fontSize: "small",
-                width: "90%",
-                textAlign: "center",
-                backgroundColor: "#FEE500",
-                cursor: "pointer",
-              }}
-            >
-              <img
-                src={icon}
-                style={{ width: "40px", verticalAlign: "middle" }}
-              />
-              &nbsp;송금하기
-            </div>
+            <KakaoPayLink/>
           </div>
           <div
             style={{
