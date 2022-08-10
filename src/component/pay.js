@@ -75,9 +75,11 @@ function Pay(props) {
       console.log("bride"); break;
   }
 
-  const copyHandler = (i) => {
-    navigator.clipboard.writeText(`${list[i].number} ${list[i].bank} ${list[i].name}`);
-    alert("계좌번호를 복사했습니다.")
+  const copyHandler = async (i) => {
+    await navigator.clipboard.writeText(`${list[i].number} ${list[i].bank} ${list[i].name}`)
+    .then(function(){
+      alert("계좌번호를 복사했습니다.")
+    });
   }
 
 

@@ -61,9 +61,11 @@ export default function FixedBottomNavigation() {
     });
   };
 
-  const copyHandler = (i) => {
-    navigator.clipboard.writeText("https://gniusk614.github.io/");
-    alert("주소를 복사했습니다.")
+  const copyHandler = async (i) => {
+    await navigator.clipboard.writeText("https://gniusk614.github.io/")
+    .then(function(){
+      alert("주소를 복사했습니다.")
+    });
   }
   
 
