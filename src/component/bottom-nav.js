@@ -71,30 +71,27 @@ export default function FixedBottomNavigation() {
     >
       <ThemeProvider theme={theme}>
         <Fab
-        size="small"
         variant="extended"
           sx={{  margin: "5px 20px 5px 5px" }}
           id="kakaoLink"
           onClick={kakao}
           color="neutral"
         >
-          <RiKakaoTalkFill size="20" />
-          <font style={{fontFamily: "S-CoreDream-4Regular"}} size={1}>&nbsp;카톡공유</font>
+          <RiKakaoTalkFill size="30" />
+          <font style={{fontFamily: "S-CoreDream-4Regular"}} size={2}>&nbsp;카톡공유</font>
         </Fab><br/>
         <CopyToClipboard
           text={"https://gniusk614.github.io/"}
           onCopy={() => alert("주소가 복사되었습니다")}
         >
           <Fab
-           size="small"
           variant="extended"
             sx={{ margin: "5px 20px 5px 5px" }}
-            icon={<AiOutlineLink size="30" />}
             color="gray"
             aria-label="edit"
           >
-            <AiOutlineLink size="20" />
-            <font style={{fontFamily: "S-CoreDream-4Regular"}} size={1}>&nbsp;링크복사</font>
+            <AiOutlineLink size="30" />
+            <font style={{fontFamily: "S-CoreDream-4Regular"}} size={2}>&nbsp;링크복사</font>
           </Fab>
         </CopyToClipboard>
       </ThemeProvider>
