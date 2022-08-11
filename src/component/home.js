@@ -15,6 +15,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import YoutubeMovie from "./movie";
 import PayInfo from "./pay";
 import FixedBottomNavigation from "./bottom-nav";
+import Maps from "./maps";
 
 
 
@@ -216,7 +217,7 @@ export default function Home() {
       <Gallery />
       <YoutubeMovie/>
       <PayInfo/>
-      {/* <ShareBox/> */}
+      <Maps/>
       <div style={{ backgroundColor: "SeaShell", height: "100px" }}></div>
     </div>
   );
