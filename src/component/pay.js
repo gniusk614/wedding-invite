@@ -11,7 +11,7 @@ import TableRow from '@mui/material/TableRow';
 import { purple, red } from '@mui/material/colors';
 import KakaoPay from "./kakaoPay";
 import KakaoPayLink from "./kakaoPay";
-
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const payNumber = {
   "groom": {
@@ -75,12 +75,18 @@ function Pay(props) {
       console.log("bride"); break;
   }
 
-  const copyHandler = async (i) => {
-    await navigator.clipboard.writeText(`${list[i].number} ${list[i].bank} ${list[i].name}`)
-    .then(function(){
-      alert("계좌번호를 복사했습니다.")
-    });
-  }
+//   const copyHandler = async (i) => {
+//     // await navigator.clipboard.writeText(`${list[i].number} ${list[i].bank} ${list[i].name}`)
+//     // .then(function(){
+//     //   alert("계좌번호를 복사했습니다.")
+//     // });
+//    return(
+//     <CopyToClipboard text={url}
+//           onCopy={() => this.setState({copied: true})}>
+//     <!-- 생략 -->
+// </CopyToClipboard>
+//     )
+//   }
 
 
   return (
@@ -99,9 +105,10 @@ function Pay(props) {
                 {list[0].number}
               </TableCell>
               <TableCell align="center">
-                <Button onClick={() => {
-                  copyHandler(0)
-                }} color="error" size="small" variant="outlined">복사</Button>
+
+              <CopyToClipboard text={`${list[0].number} ${list[0].bank} ${list[0].name}`} onCopy={()=>alert("계좌가 복사되었습니다")}>
+                <Button color="error" size="small" variant="outlined">복사</Button>
+              </CopyToClipboard>
               </TableCell>
             </TableRow>
             <TableRow>
@@ -118,9 +125,9 @@ function Pay(props) {
                   {item.number}
                 </TableCell>
                 <TableCell align="center">
-                  <Button onClick={() => {
-                    copyHandler(index+1)
-                  }} color="error" size="small" variant="outlined">복사</Button>
+                <CopyToClipboard text={`${list[index+1].number} ${list[index+1].bank} ${list[index+1].name}`} onCopy={()=>alert("계좌가 복사되었습니다")}>
+                <Button color="error" size="small" variant="outlined">복사</Button>
+              </CopyToClipboard>
                 </TableCell>
               </TableRow>
             )}

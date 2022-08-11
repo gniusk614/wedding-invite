@@ -210,7 +210,7 @@ const Calendar = () => {
 
 export default function Home() {
   return (
-    <div>
+    <div style={{"position":"relative"}}>
       <Calendar />
       <Container />
       <Gallery />
