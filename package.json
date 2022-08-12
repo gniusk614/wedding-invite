@@ -1,7 +1,7 @@
 {
   "name": "wedding_card",
   "version": "0.1.0",
-  "private" : true,
+  "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-awesome-button": "^6.5.1",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-material-ui-carousel": "^3.4.2",

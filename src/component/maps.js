@@ -21,7 +21,7 @@ const theme = createTheme({
   overrides: {
     MuiTableCell: {
       root: {
-       padding:0
+        padding: 0
       },
     },
   },
@@ -128,72 +128,137 @@ export default function Maps() {
                   교통편 이용 안내
                 </div>
               </div>
-                <table
-                    className="busTable"
-                  aria-label="simple table"
-                  style={{
-                    marginTop:"30px",
-                    fontFamily: "S-CoreDream-4Regular",
-                    textAlign: "center",
-                    fontSize:"7pt",
-                    width:"100%",
-                    padding: "0px"
-                  }}
-                >
-                  <tbody>
-                    <tr>
-                      <th align="center" width="20%">
-                        <b>지하철</b><br/> 이용시
-                      </th>
-                      <td align="left" component="th">
-                        <font>3호선 신사역</font>에서 하차 후,
-                        <font>5번 출구</font>에서 도보 3분거리
-                        <br />
-                        <font>신분당선 신사역</font>에서 하차 후,
-                        <font>5번 출구</font>에서 도보 3분거리
-                        <br />
-                      </td>
-                    </tr>
-                    <tr>
-                      <th align="center" component="th" width="20%">
-                        <b>버스</b><br/>이용시
-                      </th>
-                      <td align="left" component="th" >
-                        <tr>
-                          <th width="20%">간선</th>
-                          <td className="ntd" align="left" >142, 145, 148, 240, 441, 542</td>
-                        </tr>
-                        <tr>
-                          <th width="20%">지선</th>
-                          <td className="ntd" align="left" >4212, 4412, 강남08, 서초03</td>
-                        </tr>
-                        <tr>
-                          <th width="20%">광역</th>
-                          <td className="ntd" align="left" >1100, 3030, 8001, 9202, 9404</td>
-                        </tr>
-                      </td>
-                      
-                    </tr>
-                    <tr>
-                      <th align="center" component="th" width="20%">
-                        <b>자가용</b><br/> 이용시
-                      </th>
-                      <td align="left" component="td" >
-                        <font>3호선 신사역</font>에서 하차 후 ,
-                        <font>5번 출구</font>에서 도보 3분거리
-                        <br />
-                        <font>신분당선 신사역</font>에서 하차 후 ,
-                        <font>5번 출구</font>에서 도보 3분거리
-                        <br />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <img src={img} style={{"width":"100%"}}></img>
-            </div>
-          </div>
-        </div>
-      </ThemeProvider>
-    </div>
+              <table
+                className="busTable"
+                aria-label="simple table"
+                style={{
+                  marginTop: "30px",
+                  fontFamily: "S-CoreDream-4Regular",
+                  textAlign: "center",
+                  fontSize: "7pt",
+                  width: "100%",
+                  padding: "0px"
+                }}
+              >
+                <tbody>
+                  <tr>
+                    <th align="center" width="20%">
+                      <b>지하철</b><br /> 이용시
+                    </th>
+                    <td align="left" component="th">
+                      <font style={{fontWeight:"bold"}} color="#FF8C00">3호선 신사역</font>에서 하차 후,
+                      <font style={{fontWeight:"bold"}} color="#FF8C00">5번 출구</font>에서 도보 3분거리
+                      <br />
+                      <font style={{fontWeight:"bold"}} color="red">신분당선 신사역</font>에서 하차 후,
+                      <font style={{fontWeight:"bold"}} color="red">5번 출구</font>에서 도보 3분거리
+                      <br />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th align="center" component="th" width="20%">
+                      <b>버스</b><br />이용시
+                    </th>
+                    <td align="left" component="th" >
+                      <tr>
+                        <th style={{color:"royalblue"}} width="20%">간선</th>
+                        <td className="ntd" style={{color:"royalblue"}} align="left" >142, 145, 148, 240, 441, 542</td>
+                      </tr>
+                      <tr>
+                        <th width="20%" style={{color:"MediumSeaGreen"}}>지선</th>
+                        <td className="ntd" style={{color:"MediumSeaGreen"}} align="left" >4212, 4412, 강남08, 서초03</td>
+                      </tr>
+                      <tr>
+                        <th width="20%" style={{color:"red"}}>광역</th>
+                        <td className="ntd" style={{color:"red"}} align="left" >1100, 3030, 8001, 9202, 9404</td>
+                      </tr>
+                    </td>
+
+                  </tr>
+                  <tr>
+                    <th align="center" component="th" width="20%">
+                      <b>자가용</b><br /> 이용시
+                    </th>
+                    <td align="left" component="td" >
+                      <tr>
+                        <th align="center"  style={{color:"SaddleBrown"}}>남산 3호 터널</th>
+                      </tr>
+                      <tr>
+                        <td className="ntd" align="center"style={{"borderBottom":"1px solid lightgray"}} >
+                          한남대교(남단) → 강남대로(신사역)방향 150m → 우회전시 호텔 진입
+                        </td>
+                      </tr>
+                      <tr>
+                        <th align="center"  style={{color:"SaddleBrown"}}>강남 고속버스터미널 방면</th>
+                      </tr>
+                      <tr>
+                        <td className="ntd" align="center" style={{"borderBottom":"1px solid lightgray"}} >
+                          잠원로 방향 → 압구정로 방향 → 신사역 방향 200m → 우회전시 호텔 진입
+                        </td>
+                      </tr>
+                      <tr>
+                        <th align="center"  style={{color:"SaddleBrown"}}>압구정 방면</th>
+                      </tr>
+                      <tr>
+                        <td className="ntd" align="center" style={{"borderBottom":"1px solid lightgray"}}>
+                          압구정 → 잠원로 방향에서 좌회전→ 신사역 방향 200m → 우회전시 호텔 진입
+                        </td>
+                      </tr>
+                      <tr>
+                        <th align="center"  style={{color:"SaddleBrown"}}>강변북로 방면</th>
+                      </tr>
+                      <tr>
+                        <td className="ntd" align="center">
+                          <tr>
+                            <td style={{"borderBottom":"0px", "paddingBottom":"0px"}}>1. 강변북로 (구리 → 일산 방향)</td>
+                          </tr>
+                          <tr>
+                            <td>한남오거리 유턴 → 한남대교(남단) → 강남대로(신사역)방향 150m → 우회전시 호텔 진입</td>
+                          </tr>
+                          <tr>
+                            <td style={{"borderBottom":"0px", "paddingBottom":"0px"}}>2. 강변북로 (일산 → 구리 방향)</td>
+                          </tr>
+                          <tr>
+                            <td>한남대교 방향(남단) → 강남대로(신사역)방향 150m → 우회전시 호텔 진입</td>
+                          </tr>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th align="center"  style={{color:"SaddleBrown"}}>올림픽대로 방면</th>
+                      </tr>
+                      <tr>
+                        <td className="ntd" align="center" >
+                          <tr>
+                            <td style={{"borderBottom":"0px", "paddingBottom":"0px"}}>1. 올림픽대로 (잠실 → 김포공항 방향)</td>
+                          </tr>
+                          <tr>
+                            <td>강남대로 방향 → P턴 → 신사역 방향 150m → 우회전시 호텔 진입</td>
+                          </tr>
+                          <tr>
+                            <td style={{"borderBottom":"0px", "paddingBottom":"0px"}}>2. 올림픽대로 (김포공항 → 잠실 방향)</td>
+                          </tr>
+                          <tr>
+                            <td>한남대교(남단)방향 → P턴 → 신사역 방향 150m → 우회전시 호텔 진입</td>
+                          </tr>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <th align="center"  style={{color:"SaddleBrown"}}>경부고속도로</th>
+                      </tr>
+                      <tr>
+                        <td className="ntd" align="center" >
+                          잠원IC에서 압구정로 방면 → P턴 → 잠원로 방면 → 신사역 방향 좌회전 200m → 우회전시 호텔진입
+
+                        </td>
+                      </tr>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div >
+          </div >
+        </div >
+      </ThemeProvider >
+    </div >
   );
 }
