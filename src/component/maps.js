@@ -142,7 +142,7 @@ export default function Maps() {
               >
                 <tbody>
                   <tr>
-                    <th align="center" width="20%">
+                    <th align="center" width="20%" style={{"borderBottom":"1px solid lightgray"}} >
                       <b>지하철</b><br /> 이용시
                     </th>
                     <td align="left" component="th">
@@ -155,7 +155,7 @@ export default function Maps() {
                     </td>
                   </tr>
                   <tr>
-                    <th align="center" component="th" width="20%">
+                    <th align="center" component="th" width="20%" style={{"borderBottom":"1px solid lightgray"}} >
                       <b>버스</b><br />이용시
                     </th>
                     <td align="left" component="th" >
@@ -175,12 +175,12 @@ export default function Maps() {
 
                   </tr>
                   <tr>
-                    <th align="center" component="th" width="20%">
+                    <th align="center" component="th" width="20%" style={{"borderBottom":"1px solid lightgray"}} >
                       <b>자가용</b><br /> 이용시
                     </th>
-                    <td align="left" component="td" >
+                    <td align="left" component="td" style={{"padding":"0px"}} >
                       <tr>
-                        <th align="center"  style={{color:"SaddleBrown"}}>남산 3호 터널</th>
+                        <th align="center"  style={{color:"SaddleBrown","paddingTop":"1px"}}>남산 3호 터널</th>
                       </tr>
                       <tr>
                         <td className="ntd" align="center"style={{"borderBottom":"1px solid lightgray"}} >
@@ -207,7 +207,7 @@ export default function Maps() {
                         <th align="center"  style={{color:"SaddleBrown"}}>강변북로 방면</th>
                       </tr>
                       <tr>
-                        <td className="ntd" align="center">
+                        <td className="ntd" align="center" style={{"padding":"0px"}}>
                           <tr>
                             <td style={{"borderBottom":"0px", "paddingBottom":"0px"}}>1. 강변북로 (구리 → 일산 방향)</td>
                           </tr>
@@ -226,7 +226,7 @@ export default function Maps() {
                         <th align="center"  style={{color:"SaddleBrown"}}>올림픽대로 방면</th>
                       </tr>
                       <tr>
-                        <td className="ntd" align="center" >
+                        <td className="ntd" align="center"style={{"padding":"0px"}} >
                           <tr>
                             <td style={{"borderBottom":"0px", "paddingBottom":"0px"}}>1. 올림픽대로 (잠실 → 김포공항 방향)</td>
                           </tr>

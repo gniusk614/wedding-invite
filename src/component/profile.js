@@ -186,6 +186,7 @@ export default function Gallery() {
               label={more === false ? "더보기" : "접기"}
               onClick={onClickMore}
               variant="outlined"
+              
             />
           </div>
         </div>
