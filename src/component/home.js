@@ -2,7 +2,7 @@ import * as React from "react";
 import Container from "./content";
 import logo from "../lib/img/pic_7.jpg";
 import img1 from "../lib/img/img2.png";
-import video2 from "../lib/img/video_2.mov";
+import video2 from "../lib/img/video_3.mp4";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import { MdCall } from "react-icons/md";
