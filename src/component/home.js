@@ -7,17 +7,16 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import { MdCall } from "react-icons/md";
 import Gallery from "./profile";
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
 import PhoneInfo from "./phoneInfo";
 import { AiOutlineClose } from "react-icons/ai";
 import YoutubeMovie from "./movie";
 import PayInfo from "./pay";
 import FixedBottomNavigation from "./bottom-nav";
 import Maps from "./maps";
-
-
+import { Divider } from "@mui/material";
 
 const Calendar = () => {
   const style = {
@@ -30,12 +29,12 @@ const Calendar = () => {
     width: "60%",
   };
   const modalStyle = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
     width: 350,
-    bgcolor: 'background.paper',
+    bgcolor: "background.paper",
     boxShadow: 24,
     p: 4,
   };
@@ -44,10 +43,6 @@ const Calendar = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-
-
-
 
   return (
     <div>
@@ -111,14 +106,17 @@ const Calendar = () => {
                 신사 더 리버사이드호텔 노벨라홀
               </span>
             </div>
-            <hr
-              style={{
-                width: "50%",
-                height: "0.2px",
-                border: "0",
-                backgroundColor: "gray",
-              }}
-            />
+            <div style={{"display":"flex","justifyContent":"center"}}>
+              <Divider
+                sx={{
+                  width: "50%",
+                  height: "0.2px",
+                  border: "0",
+                  backgroundColor: "gray",
+                }}
+                variant="middle"
+              />
+            </div>
             <div
               style={{
                 fontFamily: "MapoFlowerIsland",
@@ -189,8 +187,12 @@ const Calendar = () => {
                       aria-describedby="modal-modal-description"
                     >
                       <Box sx={modalStyle}>
-                        <div style={{float:"right"}}>
-                          <AiOutlineClose size={20} onClick={handleClose} style={{"cursor":"pointer"}} />
+                        <div style={{ float: "right" }}>
+                          <AiOutlineClose
+                            size={20}
+                            onClick={handleClose}
+                            style={{ cursor: "pointer" }}
+                          />
                         </div>
                         <PhoneInfo Info={info} />
                       </Box>
@@ -206,18 +208,15 @@ const Calendar = () => {
   );
 };
 
-
-
-
 export default function Home() {
   return (
-    <div style={{"position":"relative"}}>
+    <div style={{ position: "relative" }}>
       <Calendar />
       <Container />
       <Gallery />
-      <YoutubeMovie/>
-      <PayInfo/>
-      <Maps/>
+      <YoutubeMovie />
+      <PayInfo />
+      <Maps />
       <div style={{ backgroundColor: "SeaShell", height: "100px" }}></div>
     </div>
   );
