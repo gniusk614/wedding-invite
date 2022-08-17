@@ -84,21 +84,8 @@ export default function Gallery() {
         indicators={false}
       >
         {items.map((item, i) => (
-          <div
-            style={{
-              width: "100%",
-              position: "relative",
-              display: "flex", 
-              justifyContent: "end"
-            }}
-          >
-            <div onClick={handleClose} style={{cursor: "pointer", position: "absolute",zIndex: "99"}}>
-              <AiOutlineClose
-              opacity={0.3}
-                size={20}
-              />
-            </div>
-            <img key={i} src={item} style={{ objectFit: "cover",width: "100%", zIndex:"1" }}></img>
+          <div onClick={handleClose} style={{"display":"flex","justifyContent":"center"}}>
+            <img key={i} src={item} style={{ maxWidth:"100vw", height:"100vh", zIndex: "1",objectFit:"contain" }}></img>
           </div>
         ))}
       </Carousel>
@@ -119,7 +106,7 @@ export default function Gallery() {
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
-      width: 350,
+      height:"100vh",
       outline: "none",
     };
 
@@ -137,16 +124,14 @@ export default function Gallery() {
             >
               <img
                 src={item}
-                style={{ width: "30%", margin: "2px", cursor: "pointer" }}
+                style={{ width: "100px", height: "100px", objectFit: "cover", transform: "translate(50, 50)", margin: "2px", cursor: "pointer" }}
               ></img>
             </span>
           ))}
         </div>
         <div>
           <Modal open={open} onClose={handleClose}>
-            <Box sx={modalStyle}>
               <PhotoFull />
-            </Box>
           </Modal>
         </div>
       </div>
@@ -185,7 +170,7 @@ export default function Gallery() {
               label={more === false ? "더보기" : "접기"}
               onClick={onClickMore}
               variant="outlined"
-              
+
             />
           </div>
         </div>
