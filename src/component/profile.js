@@ -76,7 +76,6 @@ export default function Gallery() {
   };
 
   const PhotoFull = () => {
-    console.log(index);
     return (
       <Carousel
         index={index}
@@ -93,13 +92,13 @@ export default function Gallery() {
               justifyContent: "end"
             }}
           >
-            <div onClick={handleClose} style={{cursor: "pointer", position: "absolute",zIndex: "99",height:"auto"}}>
+            <div onClick={handleClose} style={{cursor: "pointer", position: "absolute",zIndex: "99"}}>
               <AiOutlineClose
               opacity={0.3}
                 size={20}
               />
             </div>
-            <img key={i} src={item} style={{ width: "100%", zIndex:"1" }}></img>
+            <img key={i} src={item} style={{ objectFit: "cover",width: "100%", zIndex:"1" }}></img>
           </div>
         ))}
       </Carousel>
