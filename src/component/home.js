@@ -23,6 +23,7 @@ const Calendar = () => {
     fontFamily: "MapoFlowerIsland",
     fontSize: "15pt",
     padding: "20px 20px 40px 20px",
+
   };
   const imgStyle = {
     margin: "15px",
@@ -98,11 +99,11 @@ const Calendar = () => {
               강광훈 <span style={{ fontSize: "10pt" }}>그리고</span> 이희연
               <br />
               <br />
-              <span style={{ fontSize: "10pt" }}>
+              <span style={{ fontSize: "11pt" ,fontWeight:"bold"}}>
                 2022년 10월 8일 토요일 오전 11시
               </span>
               <br />
-              <span style={{ fontSize: "10pt" }}>
+              <span style={{ fontSize: "11pt" ,fontWeight:"bold"}}>
                 신사 더 리버사이드호텔 노벨라홀
               </span>
             </div>
