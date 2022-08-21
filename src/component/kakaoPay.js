@@ -1,7 +1,7 @@
 import { Box, Button, createTheme, Fab, ThemeProvider } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import icon from "../lib/img/kakaopayIcon.jpg";
-import icon_g from "../lib/img/icons_3.png";
+import icon_g from "../lib/img/icons_5.png";
 import icon_b from "../lib/img/icons_4.png";
 import React from "react";
 
@@ -22,7 +22,7 @@ const theme = createTheme({
 
 function PayLink() {
   const hrefHandler = (i) => {
-    alert("카카오페이로 이동합니다. 이미 설치가 되어있는 경우 화면 하단 앱 열기를 눌러주세요.")
+    alert("카카오페이로 이동합니다. <br/>이미 설치가 되어있는 경우 화면 하단 앱 열기를 눌러주세요.")
     switch (i) {
       case "m":
         window.location.href = "http://kko.to/E6ykpwJzv";

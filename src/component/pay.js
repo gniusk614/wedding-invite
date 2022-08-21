@@ -37,7 +37,7 @@ const payNumber = {
   "brideM": {
     "bank": "우리은행",
     "name": "김정미",
-    "number": "32408001533"
+    "number": "324-08-001533"
   }
   // "brideF": {
   //   "bank": "우리은행",
