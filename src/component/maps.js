@@ -106,7 +106,7 @@ export default function Maps() {
                 </font>
               </Button>
             </div>
-            <div  style={{ fontFamily: "MapoFlowerIsland" ,marginTop:"30px", fontWeight:"bold", fontSize:"10pt",display:"flex",justifyContent:"center"}}>
+            <div className={"notranslate"}  style={{ fontFamily: "MapoFlowerIsland" ,marginTop:"30px", fontWeight:"bold", fontSize:"10pt",display:"flex",justifyContent:"center"}}>
               ※ 호텔 입구에서 제공되는 발렛 서비스로 인해 <br/>주차장 입구가 혼잡하오니 대중교통을 이용하시는 것이 더 편리합니다.
             </div>
             <div>

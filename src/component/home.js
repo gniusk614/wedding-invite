@@ -138,7 +138,7 @@ const Calendar = () => {
                 </text>{" "}
                 희연
               </div>
-              <div style={{ marginTop: "40px", textAlign: "center" }}>
+              <div className={"notranslate"} style={{ marginTop: "40px", textAlign: "center" }}>
                 <div style={{ display: "inline-block" }}>
                   <Stack spacing={5} direction="row">
                     <Button
