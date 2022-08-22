@@ -35,15 +35,14 @@ import { display } from "@mui/system";
 export default function Gallery() {
   var items = [
     img_1,
-    img_2,
+    img_14,
     img_3,
     img_4,
-    img_5,
-    img_6,
+    img_20,
+    img_11,
     img_8,
     img_9,
     img_10,
-    img_11,
     img_12,
     img_13,
     img_15,
@@ -58,8 +57,10 @@ export default function Gallery() {
     img_24,
     img_25,
     img_26,
-    img_14,
     img_7,
+    img_2,
+    img_6,
+    img_5,
   ];
 
   let [more, setMore] = React.useState(false);
@@ -165,7 +166,7 @@ export default function Gallery() {
             <text>우리의 소중한 순간</text>
           </div>
           <Photo />
-          <div style={{ marginTop: "10px" }}>
+          <div style={{ marginTop: "10px",padding:"0" }}>
             <Chip
               label={more === false ? "더보기" : "접기"}
               onClick={onClickMore}
