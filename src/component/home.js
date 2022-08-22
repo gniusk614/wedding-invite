@@ -107,27 +107,15 @@ const Calendar = () => {
                 신사 더 리버사이드호텔 노벨라홀
               </span>
             </div>
-            <div style={{"display":"flex","justifyContent":"center"}}>
-              <Divider
-                sx={{
-                  width: "50%",
-                  height: "0.2px",
-                  border: "0",
-                  backgroundColor: "gray",
-                }}
-                variant="middle"
-              />
-            </div>
             <div
               style={{
                 fontFamily: "MapoFlowerIsland",
                 fontSize: "15pt",
-                marginTop: "40px",
                 marginBottom: "30px",
                 padding: "0px",
               }}
             >
-              <div style={{ fontSize: "9pt", lineHeight: "20px" }}>
+              <div style={{ fontSize: "9pt", lineHeight: "20px" ,marginBottom:"15px" }}>
                 부모님은 하늘로부터 받은 최고의 선물이고,
                 <br />
                 부부는 자신이 선택한 최고의 보물이라고 합니다.
