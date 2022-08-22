@@ -58,7 +58,6 @@ export default function Gallery() {
     img_25,
     img_26,
     img_7,
-    img_2,
     img_6,
     img_5,
   ];
