@@ -55,7 +55,7 @@ const Calendar = () => {
             강 광 훈 &nbsp;&nbsp;&nbsp;&nbsp; 이 희 연
           </text>
           <br />
-          <text style={{ fontSize: "small" }}>2022년 10월 8일 오전 11시</text>
+          <text style={{ fontSize: "small" }}>2023년 10월 8일 오전 11시</text>
           <br />
           <text style={{ fontSize: "small" }}>더 리버사이드호텔 노벨라홀</text>
         </div>
@@ -100,7 +100,7 @@ const Calendar = () => {
               <br />
               <br />
               <span style={{ fontSize: "10pt" ,fontWeight:"bold"}}>
-                2022년 10월 8일 토요일 오전 11시
+                2023년 10월 8일 일요일 오전 11시
               </span>
               <br />
               <span style={{ fontSize: "10pt" ,fontWeight:"bold"}}>

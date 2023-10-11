@@ -16,7 +16,7 @@ class Container extends React.Component {
   intervalId2;
 
   componentDidMount() {
-    const march = new Date("2022/10/08 11:00:00");
+    const march = new Date("2023/10/08 11:00:00");
     // 3월 1일 기준으로 d-day 를 세야하기 때문에 3월 1일의 날짜 객체를 하나 만들어줍니다. 
 
     this.intervalId = setInterval(() => {
