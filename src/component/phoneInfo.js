@@ -24,14 +24,14 @@ const phoneNumber = {
 export default function PhoneInfo(props) {
 
 
-    console.log(props.Info)
+    // console.log(props.Info)
 
     let list = [];
     let person = "";
 
     switch (props.Info) {
         case "groom":
-            console.log("groom");
+            // console.log("groom");
             list = [
                 phoneNumber.groom,
                 phoneNumber.groomF,
@@ -46,7 +46,8 @@ export default function PhoneInfo(props) {
                 phoneNumber.brideM
             ];
             person = "신부";
-            console.log("bride"); break;
+            // console.log("bride");
+            break;
     }
 
 

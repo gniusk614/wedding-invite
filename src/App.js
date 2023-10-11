@@ -21,6 +21,7 @@ function App() {
         <meta property="og:title" content="광훈♡희연 결혼식에 초대합니다."></meta>
         <meta property="og:image" content="./lib/img/gallary/pic_8.jpg"></meta>
         <meta property="og:description" content="2023.10.08(일) 오전 11시 더리버사이드호텔 LL층 노벨라홀" />
+        <meta name="google" content="notranslate"/>
       </Helmet>
       <Home></Home>
       <FixedBottomNavigation />
